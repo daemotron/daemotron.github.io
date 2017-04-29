@@ -11,7 +11,7 @@
   "urls": {
     "site": "https://daemotron.github.io",
     "hubpress": "https://daemotron.github.io",
-    "theme": "//daemotron.github.io/themes/casper",
+    "theme": "//daemotron.github.io/themes/uno",
     "images": "https://daemotron.github.io/images"
   },
   "initialisationConfigComponent": {
@@ -43,7 +43,7 @@
     "instagram": "",
     "pinterest": "",
     "flickr": "",
-    "linkedin": "",
-    "stackoverflow": ""
+    "linkedin": "https://www.linkedin.com/in/jescofreund",
+    "stackoverflow": "http://stackoverflow.com/users/5217009/daemotron"
   }
 }
