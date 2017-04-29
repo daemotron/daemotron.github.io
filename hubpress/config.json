@@ -2,7 +2,8 @@
   "meta": {
     "username": "daemotron",
     "repositoryName": "daemotron.github.io",
-    "branch": "master"
+    "branch": "master",
+    "cname": ""
   },
   "theme": {
     "name": "casper"
@@ -22,5 +23,27 @@
       null,
       null
     ]
+  },
+  "site": {
+    "title": "My Universe",
+    "description": "Mens Insana In Corpore Ignavo",
+    "logo": "",
+    "cover": "",
+    "delay": "",
+    "postsPerPage": "5",
+    "googleAnalytics": "",
+    "disqus": ""
+  },
+  "socialnetwork": {
+    "email": "",
+    "github": "",
+    "twitter": "",
+    "facebook": "",
+    "googleplus": "",
+    "instagram": "",
+    "pinterest": "",
+    "flickr": "",
+    "linkedin": "",
+    "stackoverflow": ""
   }
 }
