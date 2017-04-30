@@ -1,1 +1,34 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[My Universe]]></title><description><![CDATA[Mens Insana In Corpore Ignavo]]></description><link>https://daemotron.github.io</link><generator>RSS for Node</generator><lastBuildDate>Sun, 30 Apr 2017 10:55:11 GMT</lastBuildDate><atom:link href="https://daemotron.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl></channel></rss>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[My Universe]]></title><description><![CDATA[Mens Insana In Corpore Ignavo]]></description><link>https://daemotron.github.io</link><generator>RSS for Node</generator><lastBuildDate>Sun, 30 Apr 2017 20:31:41 GMT</lastBuildDate><atom:link href="https://daemotron.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Reboot]]></title><description><![CDATA[<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>I amar prestar aen,<br>
+Han mathon ne nen,<br>
+Han mathon ne chae<br>
+A han noston ned 'wilith</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>And again, my world is changing. A bit more than one year ago, I moved from a self-hosted blog built with <a href="https://ghost.org/">Ghost</a> to a fully managed website using Jimdo&#8217;s website construction kit. Sure, the effort for maintaining the full stack (server, os, database, web server software, etc.) has gone, and I certainly don&#8217;t want it back.</p>
+</div>
+<div class="paragraph">
+<p>But maintaining the website itself has proven to be a bit of a hassle with Jimdo&#8201;&#8212;&#8201;each page, even each blog post, has to be bricolaged together with predefined content elements. So a lot of my time spent on the website went into layouting articles, instead of writing content. Other than with Ghost, you couldn&#8217;t just log in and write away in simple plain text (<a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a>, to be precise).</p>
+</div>
+<div class="paragraph">
+<p>This really had an impact on my posting frequency&#8201;&#8212;&#8201;at some time, it was as low as just once every couple of months (my personal "best" was a full 5 months of silence). Not being happy with Jimdo (mostly due to that), I constantly kept looking for alternate solutions, that would give me back an easier content creation, but not at the cost of making me spend hours on administrating servers and applications again.</p>
+</div>
+<div class="paragraph">
+<p>I tried some big CMS stuff (like <a href="https://plone.org/">Plone 5</a>, <a href="https://www.django-cms.org/">django CMS</a>, <a href="http://www.opencms.org/">OpenCms</a> and <a href="http://www.ametys.org/">Ametys</a>) hosted on managed cloud services, but again I didn&#8217;t find the simplicity I was hoping for. Either it was very complex to set up the site itself, or blogging in general was not well supported. Or media management proved to be complex, or inserting syntax-highlighted code snippets into articles was impossible without bigger hacks&#8230;&#8203; just chose, none of them had real simplicity and elegance in store.</p>
+</div>
+<div class="paragraph">
+<p>Over time, again and again I was drawn to static site generators. For some time, my blog was running on <a href="https://getnikola.com/">Nikola</a>, and back then I had good reasons to stop using it&#8201;&#8212;&#8201;mostly the long run time to get my site updated after having changed something small as a typo fix in an article, but also the fact I had to have access to a computer with the repo cloned locally and all the software dependencies installed.</p>
+</div>
+<div class="paragraph">
+<p>Yet the simplicity of hosting a static site is still very attractive, so how on earth could I get a static blog without need for local software and build tools, and with the ability to generate content from any computer? I knew about <a href="https://pages.github.com/">GitHub Pages</a> and <a href="https://jekyllrb.com/">Jekyll</a>, but I could never warm to  Jekyll or derivated static site generators (I&#8217;m simply not a ruby guy&#8230;&#8203;). I also experimented with <a href="http://www.sphinx-doc.org/">Sphinx</a> and <a href="https://github.com/syntaf/travis-sphinx">travis-sphinx</a>, but Sphinx is not really made for websites and blogging.</p>
+</div>
+<div class="paragraph">
+<p>When I recently stumbled accross <a href="http://hubpress.io/">HubPress</a>, I knew I had found what I was looking for. This blogging solution is built around GitHub pages, works fine even without ever loading something to the local computer, and offers a Ghost-like browser-based post editor (using <a href="http://asciidoctor.org/">AsciiDoc</a> instead of Markdown). On top, posts can be written via GitHub&#8217;s built-in editor, or offline with any text editor&#8201;&#8212;&#8201;they&#8217;re just <code>.adoc</code> files in a GitHub pages repository or branch.</p>
+</div>
+<div class="paragraph">
+<p>After more than 15 years of running a personal website, I&#8217;m certainly not naive when it comes to site generators and blogging solutions. I&#8217;m not sure HubPress will become a sustainable solution, driving my site for a longer period. However, it certainly has the potential to do so, as it brings along all the ingredients I was long looking for&#8201;&#8212;&#8201;I will certainly give it the chance to prove it can do this for me, and hopefully also increase my posting frequency.</p>
+</div>]]></description><link>https://daemotron.github.io/2017/04/30/Reboot.html</link><guid isPermaLink="true">https://daemotron.github.io/2017/04/30/Reboot.html</guid><category><![CDATA[Blog]]></category><category><![CDATA[Open_Source]]></category><dc:creator><![CDATA[Jesco Freund]]></dc:creator><pubDate>Sun, 30 Apr 2017 00:00:00 GMT</pubDate></item></channel></rss>
