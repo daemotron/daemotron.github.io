@@ -1,6 +1,6 @@
 = Reboot 
 :published_at: 2017-04-30
-:hp-tags: Blog, Open_Source,
+:hp-tags: Blog, HubPress,
 
 [quote]
 ____
