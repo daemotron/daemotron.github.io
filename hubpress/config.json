@@ -6,12 +6,12 @@
     "cname": ""
   },
   "theme": {
-    "name": "saga"
+    "name": "uno"
   },
   "urls": {
     "site": "https://daemotron.github.io",
     "hubpress": "https://daemotron.github.io",
-    "theme": "//daemotron.github.io/themes/uno",
+    "theme": "//daemotron.github.io/themes/saga",
     "images": "https://daemotron.github.io/images"
   },
   "initialisationConfigComponent": {
