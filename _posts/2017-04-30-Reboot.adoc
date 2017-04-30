@@ -1,5 +1,5 @@
 = Reboot 
-// :published_at: 2017-04-30
+:published_at: 2017-04-30
 :hp-tags: Blog, Open_Source,
 
 [quote]
