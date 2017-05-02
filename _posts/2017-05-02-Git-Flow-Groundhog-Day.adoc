@@ -1,0 +1,17 @@
+= GitFlow Groundhog Day
+// :published_at: 2019-01-31
+:hp-tags: Development, Git, GitHub,
+
+Yes, this is all over again the old discussion about what's the best branching
+model for projects using https://git-scm.com/[Git] as their version control
+system. I know, there are countless blog posts about that topic out there...
+yet, I feel most of the discussion is focused on projects with continuous
+deployment (i. e. mostly web applications), whereas classical desktop software
+with classical release cycles are rather underrepresented.
+
+First, some thoughts on what I actually need, before creating any new ideas
+others put already in the bin due to being unfit... When hacking on a desktop
+software or an operating system (i. e. something that will be deployed on
+many systems, by many people, without me as developer being aware), it all
+comes down to releases. People are used to releases, updates etc. being clearly
+labelled with a http://semver.org/[semantic version] designator.
