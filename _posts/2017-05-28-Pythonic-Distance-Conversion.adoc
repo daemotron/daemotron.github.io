@@ -9,8 +9,8 @@ factors all accross a project is a tedious task, and Python has some good means 
 
 Before entering into implementation details, let's have a look at some general rules that make life easier when dealing
 with distances or lengths (or any other unit of measurement). First, it's a good idea to align on one single reference
-unit. All values will be stored in this unit, and all computations are done using this unit. Any other unit will be
-treated as input/output filter. Second, it's also a very good idea to use
+unit. All values will be stored in this unit, and all computations are done using this unit. Any other unit will be treated as input/output filter.
+Second, it's also a very good idea to use
 https://en.wikipedia.org/wiki/International_System_of_Units[SI units] for that purpose. No, that's not another rant
 about why the metric system is superior to the imperial system, but SI units generally have well-defined conversions
 to any other unit system. Example: common imperial units such as _inch_, _foot_, _yard_ and _mile_ have a standard
