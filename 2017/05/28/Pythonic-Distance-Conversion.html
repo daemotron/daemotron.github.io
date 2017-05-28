@@ -25,7 +25,7 @@
     <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
     <link href="/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
 
-    <link rel="stylesheet" type="text/css" href="//daemotron.github.io/themes/uno/assets/css/uno.css?v=1495985705379" />
+    <link rel="stylesheet" type="text/css" href="//daemotron.github.io/themes/uno/assets/css/uno.css?v=1495985916708" />
 
     <link rel="canonical" href="https://daemotron.github.io/2017/05/28/Pythonic-Distance-Conversion.html" />
     <meta name="referrer" content="origin" />
@@ -201,7 +201,7 @@ speaking as <code>&lt;Distance object at 0x108479f60&gt;</code>. Not very impres
 <div class="paragraph">
 <p>First, we want a decent representation making it easier to play with the class in an interactive Python interpreter.
 That can be achieved by adding a
-<a href="https://docs.python.org/3/reference/datamodel.html#object.__repr__"><code><em>repr</em></code> method</a>.
+<a href="https://docs.python.org/3/reference/datamodel.html#object.__repr__"><code>__repr__</code> method</a>.
 In our case this can be as simple as this:</p>
 </div>
 <div class="listingblock">
@@ -373,7 +373,7 @@ def __add_property(self, name, value, doc=None):
 </div>
 </div>
 <div class="paragraph">
-<p>Since assignments are not allowed in <code>lambda</code> statements, I use an auxiliary <code>__set</code> method which does the
+<p>Since assignments are not allowed in <code>lambda</code> statements, I use an auxiliary <code>__set()</code> method which does the
 conversion and assigns the result to the internal instance variable representating the distance value.</p>
 </div>
 <div class="paragraph">
@@ -460,7 +460,7 @@ dedicated to giving the class a predictable "numeric" behaviour).</p>
        
     <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
-    <script type="text/javascript" src="//daemotron.github.io/themes/uno/assets/js/main.js?v=1495985705379"></script>
+    <script type="text/javascript" src="//daemotron.github.io/themes/uno/assets/js/main.js?v=1495985916708"></script>
     
 
 </body>
