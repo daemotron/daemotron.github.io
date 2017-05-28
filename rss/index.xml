@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[My Universe]]></title><description><![CDATA[Mens Insana In Corpore Ignavo]]></description><link>https://daemotron.github.io</link><generator>RSS for Node</generator><lastBuildDate>Sun, 28 May 2017 15:29:17 GMT</lastBuildDate><atom:link href="https://daemotron.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Pythonic Distance Conversion]]></title><description><![CDATA[<div class="paragraph">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[My Universe]]></title><description><![CDATA[Mens Insana In Corpore Ignavo]]></description><link>https://daemotron.github.io</link><generator>RSS for Node</generator><lastBuildDate>Sun, 28 May 2017 15:32:01 GMT</lastBuildDate><atom:link href="https://daemotron.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Pythonic Distance Conversion]]></title><description><![CDATA[<div class="paragraph">
 <p>When dealing with distances or lengths, it&#8217;s a common problem to convert values between all the different units
 available out there. Of course, converting itself is a less than complicated simple floating point division or
 multiplication, depending on how values and conversion factors are stored internally. However, maintaining conversion
-factors all accross a project is a tedious task, and Python as some good means at hand to simplify our life.</p>
+factors all accross a project is a tedious task, and Python has some good means at hand to simplify our life.</p>
 </div>
 <div class="paragraph">
 <p>Before entering into implementation details, let&#8217;s have a look at some general rules that make life easier when dealing
