@@ -80,8 +80,8 @@ def __radd__(self, other):
     return Distance(self._dist + float(other))
 ----
 Implementing both methods,
-link:++https://docs.python.org/3/reference/datamodel.html#object.__add__++[``__add__``] and
-link:++https://docs.python.org/3/reference/datamodel.html#object.__radd__++[``__radd__``] is necessary to ensure
+link:++https://docs.python.org/3/reference/datamodel.html#object.__add__++[``\\__add__``] and
+link:++https://docs.python.org/3/reference/datamodel.html#object.__radd__++[``\\__radd__``] is necessary to ensure
 addition works also with non-``Distance`` operands being put in the first place. This
 link:++https://stackoverflow.com/questions/24431288/understanding-arithmetic-operators-in-python#24431474++[post on
 StackOverflow] by https://stackoverflow.com/users/100297/martijn-pieters[Martijn Pieters] offers a good explanation of
