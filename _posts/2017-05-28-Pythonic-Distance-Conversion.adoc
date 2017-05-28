@@ -5,7 +5,7 @@
 When dealing with distances or lengths, it's a common problem to convert values between all the different units
 available out there. Of course, converting itself is a less than complicated simple floating point division or
 multiplication, depending on how values and conversion factors are stored internally. However, maintaining conversion
-factors all accross a project is a tedious task, and Python as some good means at hand to simplify our life.
+factors all accross a project is a tedious task, and Python has some good means at hand to simplify our life.
 
 Before entering into implementation details, let's have a look at some general rules that make life easier when dealing
 with distances or lengths (or any other unit of measurement). First, it's a good idea to align on one single reference
