@@ -44,7 +44,7 @@ speaking as ``<Distance object at 0x108479f60>``. Not very impressive, I know --
 
 First, we want a decent representation making it easier to play with the class in an interactive Python interpreter.
 That can be achieved by adding a
-link:++https://docs.python.org/3/reference/datamodel.html#object.__repr__++[``__repr__`` method].
+link:++https://docs.python.org/3/reference/datamodel.html#object.__repr__++[``\\__repr__`` method].
 In our case this can be as simple as this:
 
 [source,python]
@@ -192,7 +192,7 @@ def __add_property(self, name, value, doc=None):
     )
 ----
 
-Since assignments are not allowed in ``lambda`` statements, I use an auxiliary ``__set`` method which does the
+Since assignments are not allowed in ``lambda`` statements, I use an auxiliary ``__set()`` method which does the
 conversion and assigns the result to the internal instance variable representating the distance value.
 
 Finally, ``\\__init__`` needs to actually create all the properties. This can be done in a simple loop:
