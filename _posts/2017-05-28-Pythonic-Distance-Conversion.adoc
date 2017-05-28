@@ -90,7 +90,7 @@ the How and Why.
 Implementing rich comparison operators (<, >, ==, <=, >=) works along the same lines, just that there are no explicit
 reflected implementations (instead, the opposite operator is used as reflected implementation, e. g. < is the reflected
 operator to >=, and == pairs with !=). I will not waste time and space here to replicate what's already written in the
-:link:++https://docs.python.org/3/reference/datamodel.html#object.__lt__++[Python documentation] on that subject.
+link:++https://docs.python.org/3/reference/datamodel.html#object.__lt__++[Python documentation] on that subject.
 
 Wait, so far we managed to produce a class that more or less does the same as any trivial float? Indeed, you're right
 about that, but there was a requirement about converting distances into different units, wasn't it? That would really
