@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[My Universe]]></title><description><![CDATA[Mens Insana In Corpore Ignavo]]></description><link>https://daemotron.github.io</link><generator>RSS for Node</generator><lastBuildDate>Sun, 28 May 2017 15:26:51 GMT</lastBuildDate><atom:link href="https://daemotron.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Pythonic Distance Conversion]]></title><description><![CDATA[<div class="paragraph">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[My Universe]]></title><description><![CDATA[Mens Insana In Corpore Ignavo]]></description><link>https://daemotron.github.io</link><generator>RSS for Node</generator><lastBuildDate>Sun, 28 May 2017 15:53:53 GMT</lastBuildDate><atom:link href="https://daemotron.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Pythonic Distance Conversion]]></title><description><![CDATA[<div class="paragraph">
 <p>When dealing with distances or lengths, it&#8217;s a common problem to convert values between all the different units
 available out there. Of course, converting itself is a less than complicated simple floating point division or
 multiplication, depending on how values and conversion factors are stored internally. However, maintaining conversion
-factors all accross a project is a tedious task, and Python as some good means at hand to simplify our life.</p>
+factors all accross a project is a tedious task, and Python has some good means at hand to simplify our life.</p>
 </div>
 <div class="paragraph">
 <p>Before entering into implementation details, let&#8217;s have a look at some general rules that make life easier when dealing
@@ -46,7 +46,7 @@ speaking as <code>&lt;Distance object at 0x108479f60&gt;</code>. Not very impres
 <div class="paragraph">
 <p>First, we want a decent representation making it easier to play with the class in an interactive Python interpreter.
 That can be achieved by adding a
-<a href="https://docs.python.org/3/reference/datamodel.html#object.__repr__"><code><em>repr</em></code> method</a>.
+<a href="https://docs.python.org/3/reference/datamodel.html#object.__repr__"><code>__repr__</code> method</a>.
 In our case this can be as simple as this:</p>
 </div>
 <div class="listingblock">
@@ -86,8 +86,8 @@ def __radd__(self, other):
 </div>
 <div class="paragraph">
 <p>Implementing both methods,
-<a href="https://docs.python.org/3/reference/datamodel.html#object.__add__"><code><em>add</em></code></a> and
-<a href="https://docs.python.org/3/reference/datamodel.html#object.__radd__"><code><em>radd</em></code></a> is necessary to ensure
+<a href="https://docs.python.org/3/reference/datamodel.html#object.__add__"><code>__add__</code></a> and
+<a href="https://docs.python.org/3/reference/datamodel.html#object.__radd__"><code>__radd__</code></a> is necessary to ensure
 addition works also with non-<code>Distance</code> operands being put in the first place. This
 <a href="https://stackoverflow.com/questions/24431288/understanding-arithmetic-operators-in-python#24431474">post on
 StackOverflow</a> by <a href="https://stackoverflow.com/users/100297/martijn-pieters">Martijn Pieters</a> offers a good explanation of
@@ -97,7 +97,7 @@ the How and Why.</p>
 <p>Implementing rich comparison operators (&lt;, &gt;, ==, &#8656;, &gt;=) works along the same lines, just that there are no explicit
 reflected implementations (instead, the opposite operator is used as reflected implementation, e. g. &lt; is the reflected
 operator to &gt;=, and == pairs with !=). I will not waste time and space here to replicate what&#8217;s already written in the
-:<a href="https://docs.python.org/3/reference/datamodel.html#object.__lt__">Python documentation</a> on that subject.</p>
+<a href="https://docs.python.org/3/reference/datamodel.html#object.__lt__">Python documentation</a> on that subject.</p>
 </div>
 <div class="paragraph">
 <p>Wait, so far we managed to produce a class that more or less does the same as any trivial float? Indeed, you&#8217;re right
@@ -218,7 +218,7 @@ def __add_property(self, name, value, doc=None):
 </div>
 </div>
 <div class="paragraph">
-<p>Since assignments are not allowed in <code>lambda</code> statements, I use an auxiliary <code>__set</code> method which does the
+<p>Since assignments are not allowed in <code>lambda</code> statements, I use an auxiliary <code>__set()</code> method which does the
 conversion and assigns the result to the internal instance variable representating the distance value.</p>
 </div>
 <div class="paragraph">
@@ -234,18 +234,9 @@ def __init__(self, value=0.0, unit='m'):
         self.__add_property(i, convert(value, unit, i))</code></pre>
 </div>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Since <code>__init__</code> does no longer explicitly define <code>_distance</code>, it&#8217;s good style to set <code>_distance</code> as
-instance variable already at class level. Otherwise you will get warnings from different lint tools.
-</td>
-</tr>
-</table>
+<div class="paragraph">
+<p>Since <code>__init__</code> does no longer explicitly define <code>_distance</code>, it&#8217;s good style to set <code>_distance</code> as
+instance variable already at class level. Otherwise you will get warnings from different lint tools.</p>
 </div>
 <div class="paragraph">
 <p>That&#8217;s it already&#8201;&#8212;&#8201;with those elements, a <code>Distance</code> class fulfils all our requirements set at the beginning:</p>
