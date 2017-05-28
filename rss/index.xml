@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[My Universe]]></title><description><![CDATA[Mens Insana In Corpore Ignavo]]></description><link>https://daemotron.github.io</link><generator>RSS for Node</generator><lastBuildDate>Sun, 28 May 2017 15:21:27 GMT</lastBuildDate><atom:link href="https://daemotron.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Pythonic Distance Conversion]]></title><description><![CDATA[<div class="paragraph">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[My Universe]]></title><description><![CDATA[Mens Insana In Corpore Ignavo]]></description><link>https://daemotron.github.io</link><generator>RSS for Node</generator><lastBuildDate>Sun, 28 May 2017 15:26:51 GMT</lastBuildDate><atom:link href="https://daemotron.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Pythonic Distance Conversion]]></title><description><![CDATA[<div class="paragraph">
 <p>When dealing with distances or lengths, it&#8217;s a common problem to convert values between all the different units
 available out there. Of course, converting itself is a less than complicated simple floating point division or
 multiplication, depending on how values and conversion factors are stored internally. However, maintaining conversion
@@ -142,17 +142,8 @@ units and their conversion rules, and have our <code>Distance</code> class learn
 we keep the list of units and the conversion itself well out of our <code>Distance</code> class (so you could use them in
 any other class as well).</p>
 </div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-The following code goes <strong>outside</strong> of the <code>Distance</code> class definition!
-</td>
-</tr>
-</table>
+<div class="paragraph">
+<p><strong>The following code goes <em>outside</em> of the <code>Distance</code> class definition!</strong></p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -226,21 +217,12 @@ def __add_property(self, name, value, doc=None):
     )</code></pre>
 </div>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Since assignments are not allowed in <code>lambda</code> statements, I use an auxiliary <code>__set</code> method which does the
-conversion and assigns the result to the internal instance variable representating the distance value.
-</td>
-</tr>
-</table>
+<div class="paragraph">
+<p>Since assignments are not allowed in <code>lambda</code> statements, I use an auxiliary <code>__set</code> method which does the
+conversion and assigns the result to the internal instance variable representating the distance value.</p>
 </div>
 <div class="paragraph">
-<p>Finally, <code><em>init</em></code> needs to actually create all the properties. This can be done in a simple loop:</p>
+<p>Finally, <code>__init__</code> needs to actually create all the properties. This can be done in a simple loop:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -259,7 +241,7 @@ def __init__(self, value=0.0, unit='m'):
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Since <code><em>init</em></code> does no longer explicitly define <code>_distance</code>, it&#8217;s good style to set <code>_distance</code> as
+Since <code>__init__</code> does no longer explicitly define <code>_distance</code>, it&#8217;s good style to set <code>_distance</code> as
 instance variable already at class level. Otherwise you will get warnings from different lint tools.
 </td>
 </tr>
