@@ -207,7 +207,7 @@ def __init__(self, value=0.0, unit='m'):
         self.__add_property(i, convert(value, unit, i))
 ----
 
-NOTE: Since ``\\__init__`` does no longer explicitly define ``_distance``, it's good style to set ``_distance`` as
+Since ``\\__init__`` does no longer explicitly define ``_distance``, it's good style to set ``_distance`` as
 instance variable already at class level. Otherwise you will get warnings from different lint tools.
 
 That's it already -- with those elements, a ``Distance`` class fulfils all our requirements set at the beginning:
