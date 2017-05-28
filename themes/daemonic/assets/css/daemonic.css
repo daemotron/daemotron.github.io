@@ -1098,9 +1098,9 @@ pre {
 
 .content-wrapper {
   z-index: 800;
-  width: 68%;
+  width: 65%;
   max-width: 960px;
-  margin-left: 32%; }
+  margin-left: 35%; }
 
 .content-wrapper__inner {
   margin: 0 10%;
@@ -1252,7 +1252,7 @@ hr {
   height: 100%; }
 
 .no-js .panel-main {
-  width: 32%;
+  width: 35%;
   max-width: 430px; }
 
 .panel-main__inner {
