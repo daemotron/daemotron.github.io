@@ -133,6 +133,16 @@ classes that you can use:
     </li>
     {{/if}}
 
+    {{#if socialnetwork.stackoverflow}}
+    <!-- LinkedIn -->
+    <li class="navigation__item">
+      <a href="{{socialnetwork.stackoverflow}}" title="StackOverflow account">
+        <i class='icon icon-social-stack-overflow'></i>
+        <span class="label">StackOverflow</span>
+      </a>
+    </li>
+    {{/if}}
+
     {{#if socialnetwork.email}}
     <!-- Email -->
     <li class="navigation__item">
