@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[My Universe]]></title><description><![CDATA[Mens Insana In Corpore Ignavo]]></description><link>https://daemotron.github.io</link><generator>RSS for Node</generator><lastBuildDate>Sun, 28 May 2017 19:55:38 GMT</lastBuildDate><atom:link href="https://daemotron.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Pythonic Distance Conversion]]></title><description><![CDATA[<div class="paragraph">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[My Universe]]></title><description><![CDATA[Mens Insana In Corpore Ignavo]]></description><link>https://daemotron.github.io</link><generator>RSS for Node</generator><lastBuildDate>Mon, 29 May 2017 06:37:05 GMT</lastBuildDate><atom:link href="https://daemotron.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Pythonic Distance Conversion]]></title><description><![CDATA[<div class="paragraph">
 <p>When dealing with distances or lengths, it&#8217;s a common problem to convert values between all the different units
 available out there. Of course, converting itself is a less than complicated simple floating point division or
 multiplication, depending on how values and conversion factors are stored internally. However, maintaining conversion
-factors all accross a project is a tedious task, and Python has some good means at hand to simplify our life.</p>
+factors all across a project is a tedious task, and Python has some good means at hand to simplify our life.</p>
 </div>
 <div class="paragraph">
 <p>Before entering into implementation details, let&#8217;s have a look at some general rules that make life easier when dealing
@@ -94,7 +94,7 @@ StackOverflow</a> by <a href="https://stackoverflow.com/users/100297/martijn-pie
 the How and Why.</p>
 </div>
 <div class="paragraph">
-<p>Implementing rich comparison operators (&lt;, &gt;, ==, &#8656;, &gt;=) works along the same lines, just that there are no explicit
+<p>Implementing rich comparison operators (&lt;, &gt;, ==, &lt;=, &gt;=, !=) works along the same lines, just that there are no explicit
 reflected implementations (instead, the opposite operator is used as reflected implementation, e. g. &lt; is the reflected
 operator to &gt;=, and == pairs with !=). I will not waste time and space here to replicate what&#8217;s already written in the
 <a href="https://docs.python.org/3/reference/datamodel.html#object.__lt__">Python documentation</a> on that subject.</p>
@@ -210,7 +210,7 @@ implement a custom method adding properties to the class at runtime:</p>
 def __add_property(self, name, value, doc=None):
     setattr(
         self.__class__, 'in_' + name, property(
-            fget=lambda self: convert(self._distance, 'm', 'name'),
+            fget=lambda self: convert(self._distance, 'm', name),
             fset=lambda self, value: self.__set(value, name),
             doc=doc
         )
@@ -219,7 +219,7 @@ def __add_property(self, name, value, doc=None):
 </div>
 <div class="paragraph">
 <p>Since assignments are not allowed in <code>lambda</code> statements, I use an auxiliary <code>__set()</code> method which does the
-conversion and assigns the result to the internal instance variable representating the distance value.</p>
+conversion and assigns the result to the internal instance variable representing the distance value.</p>
 </div>
 <div class="paragraph">
 <p>Finally, <code>__init__</code> needs to actually create all the properties. This can be done in a simple loop:</p>
