@@ -1,4 +1,57 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[My Universe]]></title><description><![CDATA[Mens Insana In Corpore Ignavo]]></description><link>https://daemotron.github.io</link><generator>RSS for Node</generator><lastBuildDate>Mon, 29 May 2017 06:48:05 GMT</lastBuildDate><atom:link href="https://daemotron.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Pythonic Distance Conversion]]></title><description><![CDATA[<div class="paragraph">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[My Universe]]></title><description><![CDATA[Mens Insana In Corpore Ignavo]]></description><link>https://daemotron.github.io</link><generator>RSS for Node</generator><lastBuildDate>Wed, 08 Nov 2017 13:12:57 GMT</lastBuildDate><atom:link href="https://daemotron.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Colours in Django Models]]></title><description><![CDATA[<div class="paragraph">
+<p>Colours are quite a common property to real world objects. So naturally when building web applications, sooner or later one encounters the need to assign a colour attribute to an object. For <a href="https://djangoproject.com">Django</a> developers, this usually means adding a <code>models.CharField</code> to their model, ready to capture the colour&#8217;s <a href="https://en.wikipedia.org/wiki/Web_colors#Hex_triplet">hex code</a>.</p>
+</div>
+<div class="paragraph">
+<p>Technically this works pretty well, as those hex codes can directly be used in HTML style attributes, embedded SVG drawings, etc. However, setting colour values via text input widget is quite tedious. On the frontend side, various libraries offer quite elaborate solutions for integrating nice colour picking widgets. For the Django admin, there is however a quite simple solution: use HTML 5 color inputs!</p>
+</div>
+<div class="paragraph">
+<p>To achieve this, we need to define a custom data type, alongside with a custom widget. Let&#8217;s start with the widget, as it has no further dependencies, but is later needed to define the custom data type. I prefer encapsulating widgets in their own Python module within a Django application, usually centralizing them in <code>widgets.py</code>. The code would look like:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">class ColorWidget(Input):
+    input_type = 'color'
+    template_name = 'myapp/forms/widgets/color.html'</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>OK, looks as if we had to somewhere store a template. Frankly speaking, you could also use <code>django/forms/widgets/text.html</code>; it wouldn&#8217;t make any difference. I just think that when using custom stuff, it&#8217;s better to use a custom copy&#8201;&#8212;&#8201;you never know what they&#8217;ll be modifying with the next Django release&#8230;&#8203; The template is extremely simple and looks like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-html" data-lang="html">{% include "django/forms/widgets/input.html" %}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now finally we need the custom data type. As Django keeps its data types all in <code>django.db.models</code>, I consider it ok to define the one extra custom data type within my <code>models.py</code>. However, if there are more custom types needed, I would separate them in their own module and just import them. The colour data type using our custom widget looks like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">class ColorField(models.CharField):
+    def __init__(self, *args, **kwargs):
+        kwargs['max_length'] = 10
+        super(ColorField, self).__init__(*args, **kwargs)
+
+    def formfield(self, **kwargs):
+        kwargs['widget'] = ColorWidget
+        return super(ColorField, self).formfield(**kwargs)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Overwriting the constructor is not absolutely necessary, but it offers a nice way to ensure the field length is sufficient for capturing colour codes. Please also note that in this example, the legacy notation for <code>super()</code> has been used. Python 3 only developers can of course use the modern <code>super()</code> notation.</p>
+</div>
+<div class="paragraph">
+<p>Using this new custom data type is straight forward - in your model, use it like any other data type:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">class ShinyThing(models.Model):
+    color = ColorField(default='#ffffff')</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>That&#8217;s it&#8201;&#8212;&#8201;no fiddling with JavaScript libraries, custom forms etc. Maybe this is not the most sophisticated solution, but I find it&#8217;s quite good and proved to be sufficient in many cases, where colour editing in the Django admin was more an "every now and then" story.</p>
+</div>]]></description><link>https://daemotron.github.io/2017/11/08/Colours-in-Django-Models.html</link><guid isPermaLink="true">https://daemotron.github.io/2017/11/08/Colours-in-Django-Models.html</guid><category><![CDATA[Development]]></category><category><![CDATA[Python]]></category><category><![CDATA[Django]]></category><dc:creator><![CDATA[Jesco Freund]]></dc:creator><pubDate>Wed, 08 Nov 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[Pythonic Distance Conversion]]></title><description><![CDATA[<div class="paragraph">
 <p>When dealing with distances or lengths, it&#8217;s a common problem to convert values between all the different units
 available out there. Of course, converting itself is a less than complicated simple floating point division or
 multiplication, depending on how values and conversion factors are stored internally. However, maintaining conversion
