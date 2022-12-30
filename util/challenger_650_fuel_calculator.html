@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HotStart Challenger 650 FSEconomy Fuel Calculator</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <script src="https://unpkg.com/vue@3"></script>
+</head>
+<body>
+    <div id="app">
+        <section class="hero is-primary">
+            <div class="hero-body">
+                <p class="title">
+                    HotStart Challenger 650 FSEconomy Fuel Calculator
+                </p>
+                <p class="subtitle">
+                    convert &amp; calculate your fuel numbers
+                </p>
+            </div>
+        </section>
+        <section class="section">
+            <div class="container">
+                <div class="box">
+                    <div class="field">
+                        <label class="label" for="actual">The display in the Challenger shows</label>
+                        <div class="control is-expanded">
+                            <div class="columns">
+                                <div class="column is-three-quarters">
+                                    <input class="input" type="number" id="actual" placeholder="0.0" v-model.number="actual">
+                                </div>
+                                <div class="column">
+                                    <div class="select is-fullwidth">
+                                        <select v-model="actualUnit">
+                                            <option value="kg">kg</option>
+                                            <option value="lb">lb</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label" for="plan">My flight plan requires a total of</label>
+                        <div class="control is-expanded">
+                            <div class="columns">
+                                <div class="column is-three-quarters">
+                                    <input class="input" type="number" id="plan" placeholder="0.0" v-model.number="plan">
+                                </div>
+                                <div class="column">
+                                    <div class="select is-fullwidth">
+                                        <select v-model="planUnit">
+                                            <option value="kg">kg</option>
+                                            <option value="lb">lb</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label" for="density">The fuel truck driver announces a density of</label>
+                        <div class="control is-expanded">
+                            <div class="columns">
+                                <div class="column is-three-quarters">
+                                    <input class="input" type="number" id="density" placeholder="0.0" v-model.number="density">
+                                </div>
+                                <div class="column">
+                                    <div class="select is-fullwidth">
+                                        <select v-model="densityUnit">
+                                            <option value="kg">kg per liter</option>
+                                            <option value="lb">lb per gallon</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="field">
+                        <label class="label" for="truck">Order this amount of fuel at the fuel truck:</label>
+                        <div class="control is-expanded">
+                            <div class="columns">
+                                <div class="column is-three-quarters">
+                                    <input class="input" type="number" id="truck" placeholder="0.0" v-model.number="truck" disabled>
+                                </div>
+                                <div class="column">
+                                    <input class="input" type="text" v-model.trim="truckUnit" disabled>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label" for="fse">Load this amount of fuel in FSEconomy:</label>
+                        <div class="control is-expanded">
+                            <div class="columns">
+                                <div class="column is-three-quarters">
+                                    <input class="input" type="number" id="fse" placeholder="0.0" v-model.number="fse" disabled>
+                                </div>
+                                <div class="column">
+                                    <input class="input" type="text" v-model.trim="fseUnit" disabled>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script>
+        const { createApp } = Vue;
+
+        createApp({
+            data() {
+                return {
+                    actual: 0.0,
+                    plan: 0.0,
+                    density: 3.08447722 / 3.785411784,
+                    actualUnit: 'kg',
+                    planUnit: 'kg',
+                    densityUnit: 'kg',
+                }
+            },
+            computed: {
+                fseUnit() {
+                    return 'gallons';
+                },
+                truckUnit() {
+                    if (this.densityUnit === 'lb') {
+                        return 'gallons';
+                    }
+                    else {
+                        return 'liters';
+                    }
+                },
+                actualLb() {
+                    if (this.actualUnit === 'lb') {
+                        return this.actual;
+                    }
+                    else {
+                        return this.actual / 0.45359237;
+                    }
+                },
+                planLb() {
+                    if (this.planUnit === 'lb') {
+                        return this.plan;
+                    }
+                    else {
+                        return this.plan / 0.45359237;
+                    }
+                },
+                actualKg() {
+                    if (this.actualUnit === 'kg') {
+                        return this.actual;
+                    }
+                    else {
+                        return this.actual * 0.45359237;
+                    }
+                },
+                planKg() {
+                    if (this.planUnit === 'kg') {
+                        return this.plan;
+                    }
+                    else {
+                        return this.plan * 0.45359237;
+                    }
+                },
+                truck() {
+                    if (this.densityUnit === 'lb') {
+                        return Math.ceil(Math.max(this.planLb - this.actualLb, 0.0) / this.density / 10.0) * 10.0;
+                    }
+                    else {
+                        return Math.ceil(Math.max(this.planKg - this.actualKg, 0.0) / this.density / 10.0) * 10.0;
+                    }
+                },
+                fse() {
+                    if (this.densityUnit === 'lb') {
+                        return Math.ceil(((this.actualLb + this.truck * this.density) * 0.45359237 / 3.08447722 + 5) / 10.0) * 10.0;
+                    }
+                    else {
+                        return Math.ceil(((this.actualKg + this.truck * this.density) / 3.08447722 + 5) / 10.0) * 10.0;
+                    }
+                }
+            },
+            methods: {
+
+            }
+        }).mount('#app');
+    </script>
+</body>
