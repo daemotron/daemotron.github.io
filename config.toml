@@ -1,0 +1,33 @@
+baseURL = 'https://daemotron.github.io/'
+languageCode = 'en-gb'
+title = 'My Universe'
+theme = 'puppet'
+enableEmoji = true
+
+[params]
+author = "daemotron"
+description = "Mens Insana in Corpore Ignavo"
+keywords = "blog,developer,personal"
+img_home = "img/home-bg.jpg"
+img_404 = "img/404-bg.jpg"
+
+useFaviconGenerator = false
+
+[params.social]
+github = "daemotron"
+gitlab = "daemotron"
+linkedin = "jescofreund"
+stackoverflow = "5217009/daemotron"
+rss = true
+
+[markup]
+[markup.highlight]
+noClasses = true
+codeFences = true
+guessSyntax = true
+lineNos = true
+lineNumbersInTable = false
+style = "dracula"
+
+[markup.goldmark.renderer]
+unsafe = true
