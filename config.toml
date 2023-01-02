@@ -21,6 +21,9 @@ linkedin = "jescofreund"
 stackoverflow = "5217009/daemotron"
 rss = true
 
+[permalinks]
+posts = '/:year/:month/:day/:title/'
+
 [markup]
 [markup.highlight]
 noClasses = true
@@ -32,3 +35,30 @@ style = "dracula"
 
 [markup.goldmark.renderer]
 unsafe = true
+
+[taxonomies]
+category = "categories"
+tag = "tags"
+series = "series"
+
+[menu]
+[[menu.main]]
+identifier = "home"
+name = "Home"
+url = "/"
+weight = -100
+[[menu.main]]
+identifier = "archive"
+name = "Archive"
+url = "/archive/"
+weight = 10
+[[menu.main]]
+identifier = "about"
+name = "About"
+url = "/about/"
+weight = 50
+[[menu.main]]
+identifier = "github"
+name = "Github"
+url = "https://github.com/daemotron/daemotron.github.io/"
+weight = 100
