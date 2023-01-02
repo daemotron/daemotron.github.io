@@ -1,6 +1,0 @@
-User-agent: *
-Disallow: /hubpress*/
-Disallow: /themes*/
-Disallow: /_posts*/
-Disallow: /_stuff*/
-Disallow: /*.adoc$
