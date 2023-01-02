@@ -3,6 +3,7 @@ languageCode = 'en-gb'
 title = 'My Universe'
 theme = 'puppet'
 enableEmoji = true
+enableInlineShortcodes = true
 
 [params]
 author = "daemotron"
