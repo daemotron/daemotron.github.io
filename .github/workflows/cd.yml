@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           submodules: true
           fetch-depth: 0
@@ -31,7 +31,7 @@ jobs:
         uses: chabad360/htmlproofer@master
         with:
           directory: "./public"
-          arguments: --only-4xx --check-favicon --check-html --assume-extension --empty-alt-ignore --disable-external
+          arguments: --only-4xx --checks Images,Links,Scripts,Favicon,HTML --assume-extension ".html" --ignore-empty-alt --disable-external
         continue-on-error: true
 
       - name: Deploy to GitHub Pages
