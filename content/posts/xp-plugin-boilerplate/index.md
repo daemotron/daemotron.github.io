@@ -2,7 +2,7 @@
 title: "X-Plane Plugin Boilerplate"
 date: 2023-01-04T15:28:28+01:00
 draft: false
-tags: ["x-plane", "development", "ansi c"]
+tags: ["x-plane", "development", "c/c++"]
 ---
 
 [X-Plane](https://www.x-plane.com) has a well-documented, accessible [API](https://developer.x-plane.com/sdk/), making it relatively easy to write plugins for the simulator. In this post I'm going to demonstrate how a basic plugin boilerplate can look like, and how to build it on different platforms.
