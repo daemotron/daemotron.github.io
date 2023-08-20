@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geo Coordinates Converter</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <script src="https://unpkg.com/vue@3"></script>
+</head>
+<body>
+    <div id="app">
+        <section class="hero is-primary">
+            <div class="hero-body">
+                <p class="title">
+                    Geo Coordinates Converter
+                </p>
+                <p class="subtitle">
+                    convert geographic coordinates between different formats
+                </p>
+            </div>
+        </section>
+        <section class="section">
+            <div class="container">
+                <div class="box">
+                    <div class="field">
+                        <label class="label" for="decimal.lat">Latitude and Longitude as Decimals</label>
+                        <div class="control is-expanded">
+                            <div class="columns">
+                                <div class="column is-four-fifths">
+                                    <div class="columns">
+                                        <div class="column is-half">
+                                            <input class="input" type="number" id="decimal.lat" placeholder="0.0" v-model.number="decimal.lat">
+                                        </div>
+                                        <div class="column is-half">
+                                            <input class="input" type="number" id="decimal.lon" placeholder="0.0" v-model.number="decimal.lon">
+                                        </div>        
+                                    </div>
+                                </div>
+                                <div class="column is-one-fifth">
+                                    <button class="button is-fullwidth is-link" @click="convertFromDecimal">Convert</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="field">
+                        <label class="label" for="partly.lat.degrees">Latitude and Longitude in Degrees and Minutes</label>
+                    </div>
+                    <div class="control is-expanded">
+                        <div class="columns">
+                            <div class="column is-four-fifths">
+                                <div class="columns">
+                                    <div class="column is-half">
+                                        <div class="columns">
+                                            <div class="column is-one-quarter">
+                                                <div class="select is-fullwidth">
+                                                    <select v-model="partly.lat.direction">
+                                                        <option value="N">N</option>
+                                                        <option value="S">S</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="column is-one-quarter">
+                                                <input class="input" type="number" id="partly.lat.degrees" placeholder="0" v-model.number="partly.lat.degrees">
+                                            </div>
+                                            <div class="column is-half">
+                                                <input class="input" type="number" id="partly.lat.minutes" placeholder="0" v-model.number="partly.lat.minutes">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="column is-half">
+                                        <div class="columns">
+                                            <div class="column is-one-quarter">
+                                                <div class="select is-fullwidth">
+                                                    <select v-model="partly.lon.direction">
+                                                        <option value="E">E</option>
+                                                        <option value="W">W</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="column is-one-quarter">
+                                                <input class="input" type="number" id="partly.lon.degrees" placeholder="0" v-model.number="partly.lon.degrees">
+                                            </div>
+                                            <div class="column is-half">
+                                                <input class="input" type="number" id="partly.lon.minutes" placeholder="0" v-model.number="partly.lon.minutes">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column is-one-fifth">
+                                <button class="button is-fullwidth is-link" @click="convertFromPartly">Convert</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="field">
+                        <label class="label" for="degree.lat.degrees">Latitude and Longitude in Degrees, Minutes, Seconds</label>
+                        <div class="control is-expanded">
+                            <div class="columns">
+                                <div class="column is-four-fifths">
+                                    <div class="columns">
+                                        <div class="column is-half">
+                                            <div class="columns">
+                                                <div class="column is-one-quarter">
+                                                    <div class="select is-fullwidth">
+                                                        <select v-model="degree.lat.direction">
+                                                            <option value="N">N</option>
+                                                            <option value="S">S</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="column is-one-quarter">
+                                                    <input class="input" type="number" id="degree.lat.degrees" placeholder="0.0" v-model.number="degree.lat.degrees">
+                                                </div>
+                                                <div class="column is-one-quarter">
+                                                    <input class="input" type="number" id="degree.lat.minutes" placeholder="0.0" v-model.number="degree.lat.minutes">
+                                                </div>
+                                                <div class="column is-one-quarter">
+                                                    <input class="input" type="number" id="degree.lat.seconds" placeholder="0.0" v-model.number="degree.lat.seconds">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="column is-half">
+                                            <div class="columns">
+                                                <div class="column is-one-quarter">
+                                                    <div class="select is-fullwidth">
+                                                        <select v-model="degree.lon.direction">
+                                                            <option value="E">E</option>
+                                                            <option value="W">W</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="column is-one-quarter">
+                                                    <input class="input" type="number" id="degree.lon.degrees" placeholder="0.0" v-model.number="degree.lon.degrees">
+                                                </div>
+                                                <div class="column is-one-quarter">
+                                                    <input class="input" type="number" id="degree.lon.minutes" placeholder="0.0" v-model.number="degree.lon.minutes">
+                                                </div>
+                                                <div class="column is-one-quarter">
+                                                    <input class="input" type="number" id="degree.lon.seconds" placeholder="0.0" v-model.number="degree.lon.seconds">
+                                                </div>
+                                            </div>
+                                        </div>        
+                                    </div>
+                                </div>
+                                <div class="column is-one-fifth">
+                                    <button class="button is-fullwidth is-link" @click="convertFromDegree">Convert</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script>
+        const { createApp } = Vue;
+
+        createApp({
+            data() {
+                return {
+                    decimal: {
+                        lat: 0.0,
+                        lon: 0.0
+                    },
+                    degree: {
+                        lat: {
+                            direction: 'N',
+                            degrees: 0.0,
+                            minutes: 0.0,
+                            seconds: 0.0
+                        },
+                        lon: {
+                            direction: 'E',
+                            degrees: 0.0,
+                            minutes: 0.0,
+                            seconds: 0.0
+                        }
+                    },
+                    partly: {
+                        lat: {
+                            direction: 'N',
+                            degrees: 0.0,
+                            minutes: 0.0
+                        },
+                        lon: {
+                            direction: 'E',
+                            degrees: 0.0,
+                            minutes: 0.0
+                        }
+                    }
+                }
+            },
+            computed: {
+                
+            },
+            methods: {
+                convertFromDecimal() {
+                    if (this.decimal.lat < 0) {
+                        this.degree.lat.direction = 'S';
+                        this.partly.lat.direction = 'S';
+                    }
+                    else {
+                        this.degree.lat.direction = 'N';
+                        this.partly.lat.direction = 'N';
+                    }
+                    if (this.decimal.lon < 0) {
+                        this.degree.lon.direction = 'W';
+                        this.partly.lon.direction = 'W';
+                    }
+                    else {
+                        this.degree.lon.direction = 'E';
+                        this.partly.lon.direction = 'E';
+                    }
+                    this.degree.lat.degrees = Math.floor(Math.abs(this.decimal.lat));
+                    this.degree.lon.degrees = Math.floor(Math.abs(this.decimal.lon));
+                    this.partly.lat.degrees = this.degree.lat.degrees;
+                    this.partly.lon.degrees = this.degree.lon.degrees;
+                    this.partly.lat.minutes = (Math.abs(this.decimal.lat) - this.partly.lat.degrees) * 60;
+                    this.partly.lon.minutes = (Math.abs(this.decimal.lon) - this.partly.lon.degrees) * 60;
+                    this.degree.lat.minutes = Math.floor(this.partly.lat.minutes);
+                    this.degree.lon.minutes = Math.floor(this.partly.lon.minutes);
+                    this.degree.lat.seconds = Math.round((Math.abs(this.partly.lat.minutes) - this.degree.lat.minutes) * 6000) / 100;
+                    this.degree.lon.seconds = Math.round((Math.abs(this.partly.lon.minutes) - this.degree.lat.minutes) * 6000) / 100;
+                    this.partly.lat.minutes = Math.round(this.partly.lat.minutes * 1000000) / 1000000;
+                    this.partly.lon.minutes = Math.round(this.partly.lon.minutes * 1000000) / 1000000;
+                },
+                convertFromDegree() {
+                    this.decimal.lat = (this.degree.lat.degrees + this.degree.lat.minutes / 60 + this.degree.lat.seconds / 3600) * (this.degree.lat.direction === 'N' ? 1 : -1);
+                    this.decimal.lon = (this.degree.lon.degrees + this.degree.lon.minutes / 60 + this.degree.lon.seconds / 3600) * (this.degree.lon.direction === 'E' ? 1 : -1);
+                    this.partly.lat.direction = this.degree.lat.direction;
+                    this.partly.lon.direction = this.degree.lon.direction;
+                    this.partly.lat.degrees = this.degree.lat.degrees;
+                    this.partly.lon.degrees = this.degree.lon.degrees;
+                    this.partly.lat.minutes = Math.round((this.degree.lat.minutes + this.degree.lat.seconds / 60) * 1000000) / 1000000;
+                    this.partly.lon.minutes = Math.round((this.degree.lon.minutes + this.degree.lon.seconds / 60) * 1000000) / 1000000;
+                },
+                convertFromPartly() {
+                    this.decimal.lat = (this.partly.lat.degrees + this.partly.lat.minutes / 60) * (this.partly.lat.direction === 'N' ? 1 : -1);
+                    this.decimal.lon = (this.partly.lon.degrees + this.partly.lon.minutes / 60) * (this.partly.lon.direction === 'E' ? 1 : -1);
+                    this.degree.lat.direction = this.partly.lat.direction;
+                    this.degree.lon.direction = this.partly.lon.direction;
+                    this.degree.lat.degrees = this.partly.lat.degrees;
+                    this.degree.lon.degrees = this.partly.lon.degrees;
+                    this.degree.lat.minutes = Math.floor(this.partly.lat.minutes);
+                    this.degree.lon.minutes = Math.floor(this.partly.lon.minutes);
+                    this.degree.lat.seconds = Math.round((Math.abs(this.partly.lat.minutes) - this.degree.lat.minutes) * 6000) / 100;
+                    this.degree.lon.seconds = Math.round((Math.abs(this.partly.lon.minutes) - this.degree.lat.minutes) * 6000) / 100;
+                }
+            }
+        }).mount('#app');
+    </script>
+</body>
