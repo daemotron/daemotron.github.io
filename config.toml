@@ -13,7 +13,7 @@ keywords = "blog,developer,personal"
 img_home = "img/home-bg.jpg"
 img_404 = "img/404-bg.jpg"
 
-useFaviconGenerator = false
+useFaviconGenerator = true
 
 [params.social]
 github = "daemotron"
