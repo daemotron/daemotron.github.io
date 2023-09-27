@@ -25,7 +25,7 @@ Currently, XPPL is relatively light and provides some basic functionality:
 
 #### How To Use XPPL
 
-In this example, we're using XPPL's logging functionality in a simple, barebone X-Plane plugin (as described in [X-Plane Plugin Boilerplate]({{< ref "xp-plugin-boilerplate" >}} "X-Plane Plugin Boilerplate" )). In a first step, let's add XPPL as [Git submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules):
+In this example, we're using XPPL's logging functionality in a simple, barebone X-Plane plugin (as described in [X-Plane Plugin Boilerplate](/2023/01/04/x-plane-plugin-boilerplate/). In a first step, let's add XPPL as [Git submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules):
 
 ```sh
 git submodule add https://github.com/daemotron/xppl.git
