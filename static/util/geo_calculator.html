@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Geo Coordinates Converter</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <script src="https://unpkg.com/vue@3"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 <body>
     <div id="app">
-        <section class="hero is-primary">
+        <section class="hero is-info">
             <div class="hero-body">
                 <p class="title">
                     Geo Coordinates Converter
@@ -37,7 +37,7 @@
                                     </div>
                                 </div>
                                 <div class="column is-one-fifth">
-                                    <button class="button is-fullwidth is-link" @click="convertFromDecimal">Convert</button>
+                                    <button class="button is-fullwidth is-warning" @click="convertFromDecimal">Convert</button>
                                 </div>
                             </div>
                         </div>
@@ -90,7 +90,7 @@
                                 </div>
                             </div>
                             <div class="column is-one-fifth">
-                                <button class="button is-fullwidth is-link" @click="convertFromPartly">Convert</button>
+                                <button class="button is-fullwidth is-warning" @click="convertFromPartly">Convert</button>
                             </div>
                         </div>
                     </div>
@@ -147,7 +147,7 @@
                                     </div>
                                 </div>
                                 <div class="column is-one-fifth">
-                                    <button class="button is-fullwidth is-link" @click="convertFromDegree">Convert</button>
+                                    <button class="button is-fullwidth is-warning" @click="convertFromDegree">Convert</button>
                                 </div>
                             </div>
                         </div>
