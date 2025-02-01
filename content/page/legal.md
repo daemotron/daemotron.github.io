@@ -1,14 +1,15 @@
 ---
-title: "About"
+title: "Legal"
 date: 2023-01-02T21:01:01+01:00
 draft: false
-aliases: ["about-us", "contact", "impressum"]
-toc: true
+excludeFromTopNav: false
+aliases: ["contact", "impressum"]
+
+# set the link if you want to redirect the user.
+link: ""
+# set the html target parameter if you want to change default behavior
+target: "_blank"
 ---
-
-## About daemotron
-
-Caffeine-based life form loving X-Plane, crypto, coffee, chili pepper, FreeBSD, C and Python. Likes coding stuff nobody needs and never gets finished either.
 
 ## Impressum
 
