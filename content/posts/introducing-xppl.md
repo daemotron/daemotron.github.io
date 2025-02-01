@@ -17,7 +17,7 @@ Currently, XPPL is relatively light and provides some basic functionality:
 * `xppl.h`: macros for min / max comparisons, marking unused arguments, and crashing the application
 * `xppl_alloc.h`: `malloc`, `calloc` and `realloc` implementations with integrated success checking and failure logging. Requires the `xppl_common` module.
 * `xppl_config.h`: enhance your plugin by a configuration file. Requires the `xppl_common` and `xppl_config` modules.
-* `xppl_float.h`: equality checks for different floating point types, using epsilon and [ULP](http://en.wikipedia.org/wiki/Unit_in_the_last_place). Requires the `xppl_common` module.
+* `xppl_float.h`: equality checks for different floating point types, using epsilon and [ULP](https://en.wikipedia.org/wiki/Unit_in_the_last_place). Requires the `xppl_common` module.
 * `xppl_int.h`: activate 128 bit integer (if available) and provide `abs` macro for integers.
 * `xppl_log.h`: configurable logging. Requires the `xppl_common` module.
 * `xppl_path.h`: platform-independent dirname, create path, create path recursively and check for path existence implementation. Requires the `xppl_common` module.

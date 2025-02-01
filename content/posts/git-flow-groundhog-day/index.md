@@ -8,7 +8,7 @@ tags: ['development', 'git', 'github']
 Yes, this is all over again the old discussion about what's the best branching
 model for projects using [Git](https://git-scm.com/) as their version control
 system. I know, there are countless blog posts
-(e. g. [1](http://nvie.com/posts/a-successful-git-branching-model/),
+(e. g. [1](https://nvie.com/posts/a-successful-git-branching-model/),
 [2](https://guides.github.com/introduction/flow/), or
 [3](https://barro.github.io/2016/02/a-succesful-git-branching-model-considered-harmful/))
 about that topic out there... yet, I feel most of the discussion is focused on
@@ -21,7 +21,7 @@ others put already in the bin due to being unfit... When hacking on a desktop
 software or an operating system (i. e. something that will be deployed on
 many systems, by many people, without me as developer being aware), it all
 comes down to releases. People are used to releases, updates etc. being clearly
-labelled with a [semantic version](http://semver.org/) designator. This is no
+labelled with a [semantic version](https://semver.org/) designator. This is no
 different from what you should do for SAAS web applications --- what's really
 different here is that for desktop applications, several supported versions
 can exist in parallel. So for me, a good branching model should
@@ -54,8 +54,8 @@ really figure a structure, but for Atom, there seems to be one:
 
 Seemingly, Atom uses dedicated branches for releases, and tags on these branches
 to mark published releases. This would be quite in line with what
-[Marcus Geelnard](http://www.bitsnbites.eu/author/m/) proposes in his
-[stable mainline branching model for Git](http://www.bitsnbites.eu/a-stable-mainline-branching-model-for-git/).
+[Marcus Geelnard](https://www.bitsnbites.eu/author/m/) proposes in his
+[stable mainline branching model for Git](https://www.bitsnbites.eu/a-stable-mainline-branching-model-for-git/).
 At a first glance, this seems to be the only acceptable model also satisfying
 my third requirement, i. e. the maintenance of several active releases in
 parallel, that are not nice sequences. This feels quite close from what I know
@@ -63,11 +63,11 @@ from FreeBSD --- `master` corresponds to `head`, and the release branches
 correspond to FreeBSD's `releng` branches.
 
 However, there's another branching model that looks quite appealing to me:
-[Adam Ruka](http://endoflineblog.com/about)'s
-[OneFlow](http://endoflineblog.com/oneflow-a-git-branching-model-and-workflow)
+[Adam Ruka](https://endoflineblog.com/about)'s
+[OneFlow](https://endoflineblog.com/oneflow-a-git-branching-model-and-workflow)
 model (the post is quite recent, but the idea of that model already dates back
 to his first article on the subject,
-[GitFlow considered harmful](http://endoflineblog.com/gitflow-considered-harmful)).
+[GitFlow considered harmful](https://endoflineblog.com/gitflow-considered-harmful)).
 True, in the preamble it already says:
 
 > The main condition that needs to be satisfied in order to use OneFlow for a
@@ -143,8 +143,8 @@ releases. For sure, a hotfix or patch release has to be based on the latest
 previous release, but that could as well be a hotfix release itself (e. g.
 2.3.2 would be based on 2.3.1). OneFlow is not really taking this into
 consideration, so for me, I'm more or less back on
-[Marcus Geelnard](http://www.bitsnbites.eu/author/m/'s
-[stable mainline branching model for Git](http://www.bitsnbites.eu/a-stable-mainline-branching-model-for-git/),
+[Marcus Geelnard](https://www.bitsnbites.eu/author/m/)'s
+[stable mainline branching model for Git](https://www.bitsnbites.eu/a-stable-mainline-branching-model-for-git/),
 but with one amendment taken from OneFlow:
 
 ![My Git Branching Model](images/advanced-git-branching-model.png)
