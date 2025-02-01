@@ -97,7 +97,7 @@ log.Printf("Default Port: %d", standard)
 
 will result in this output:
 
-```
+```txt
 Current Port: 8080
 Default Port: 8080
 ```
