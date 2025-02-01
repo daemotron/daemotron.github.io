@@ -1,1 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>github on My Universe</title><link>https://daemotron.github.io/tags/github/</link><description>Recent content in github on My Universe</description><generator>Hugo -- gohugo.io</generator><language>en-gb</language><lastBuildDate>Tue, 02 May 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://daemotron.github.io/tags/github/index.xml" rel="self" type="application/rss+xml"/><item><title>GitFlow Groundhog Day</title><link>https://daemotron.github.io/2017/05/02/gitflow-groundhog-day/</link><pubDate>Tue, 02 May 2017 00:00:00 +0000</pubDate><guid>https://daemotron.github.io/2017/05/02/gitflow-groundhog-day/</guid><description>Yes, this is all over again the old discussion about what&amp;rsquo;s the best branching model for projects using Git as their version control system. I know, there are countless blog posts (e. g. 1, 2, or 3) about that topic out there&amp;hellip; yet, I feel most of the discussion is focused on projects with continuous deployment (i. e. mostly web applications), whereas classical desktop software with classical release cycles are rather underrepresented.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Github on My Universe</title><link>https://www.my-universe.com/tags/github/</link><description>Recent content in Github on My Universe</description><generator>Hugo</generator><language>en-gb</language><lastBuildDate>Tue, 02 May 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://www.my-universe.com/tags/github/index.xml" rel="self" type="application/rss+xml"/><item><title>GitFlow Groundhog Day</title><link>https://www.my-universe.com/2017/05/02/gitflow-groundhog-day/</link><pubDate>Tue, 02 May 2017 00:00:00 +0000</pubDate><guid>https://www.my-universe.com/2017/05/02/gitflow-groundhog-day/</guid><description>&lt;p>Yes, this is all over again the old discussion about what&amp;rsquo;s the best branching
+model for projects using &lt;a href="https://git-scm.com/">Git&lt;/a> as their version control
+system. I know, there are countless blog posts
+(e. g. &lt;a href="https://nvie.com/posts/a-successful-git-branching-model/">1&lt;/a>,
+&lt;a href="https://guides.github.com/introduction/flow/">2&lt;/a>, or
+&lt;a href="https://barro.github.io/2016/02/a-succesful-git-branching-model-considered-harmful/">3&lt;/a>)
+about that topic out there&amp;hellip; yet, I feel most of the discussion is focused on
+projects with continuous deployment (i. e. mostly web applications), whereas
+classical desktop software with classical release cycles are rather
+underrepresented.&lt;/p>
+&lt;p>First, some thoughts on what I actually need, before creating any new ideas
+others put already in the bin due to being unfit&amp;hellip; When hacking on a desktop
+software or an operating system (i. e. something that will be deployed on
+many systems, by many people, without me as developer being aware), it all
+comes down to releases. People are used to releases, updates etc. being clearly
+labelled with a &lt;a href="https://semver.org/">semantic version&lt;/a> designator. This is no
+different from what you should do for SAAS web applications &amp;mdash; what&amp;rsquo;s really
+different here is that for desktop applications, several supported versions
+can exist in parallel. So for me, a good branching model should&lt;/p></description></item></channel></rss>

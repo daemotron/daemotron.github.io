@@ -1,20 +1,12 @@
-<!doctype html><html lang=en><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="ie=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><title>GitFlow Groundhog Day | My Universe</title><meta name=author content="daemotron"><meta name=description content="Yes, this is all over again the old discussion about what&rsquo;s the best branching model for projects using Git as their version control system. I know, there are countless blog posts (e. g. 1, 2, or 3) about that topic out there&mldr; yet, I feel most of the discussion is focused on projects with continuous deployment (i. e. mostly web applications), whereas classical desktop software with classical release cycles are rather underrepresented."><meta name=keywords content="blog,developer,personal"><meta name=twitter:card content="summary"><meta name=twitter:title content="GitFlow Groundhog Day"><meta name=twitter:description content="Yes, this is all over again the old discussion about what&rsquo;s the best branching model for projects using Git as their version control system. I know, there are countless blog posts (e. g. 1, 2, or 3) about that topic out there&mldr; yet, I feel most of the discussion is focused on projects with continuous deployment (i. e. mostly web applications), whereas classical desktop software with classical release cycles are rather underrepresented."><meta property="og:title" content="GitFlow Groundhog Day"><meta property="og:description" content="Yes, this is all over again the old discussion about what&rsquo;s the best branching model for projects using Git as their version control system. I know, there are countless blog posts (e. g. 1, 2, or 3) about that topic out there&mldr; yet, I feel most of the discussion is focused on projects with continuous deployment (i. e. mostly web applications), whereas classical desktop software with classical release cycles are rather underrepresented."><meta property="og:type" content="article"><meta property="og:url" content="https://daemotron.github.io/2017/05/02/gitflow-groundhog-day/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2017-05-02T00:00:00+00:00"><meta property="article:modified_time" content="2017-05-02T00:00:00+00:00"><link rel=stylesheet href=/css/bootstrap.min.css crossorigin=anonymous><link href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/all.min.css rel=stylesheet type=text/css><link rel=stylesheet href=/sass/main.css><link rel=stylesheet href=/zoomjs/zoom.min.css><script src=/js/lazysizes.min.js></script>
-<link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/site.webmanifest></head><body><nav class="navbar navbar-default navbar-custom navbar-fixed-top invert"><div class=container-fluid><div class="navbar-header page-scroll"><button type=button class=navbar-toggle>
-<span class=sr-only>Toggle navigation</span>
-<span class=icon-bar></span>
-<span class=icon-bar></span>
-<span class=icon-bar></span></button>
-<a class=navbar-brand href=https://daemotron.github.io/>My Universe</a></div><div id=huxblog_navbar><div class=navbar-collapse><ul class="nav navbar-nav navbar-right"><li><a href=/ title=Home>Home</a></li><li><a href=/archive/ title=Archive>Archive</a></li><li><a href=/about/ title=About>About</a></li><li><a href=https://github.com/daemotron/daemotron.github.io/ title=Github>Github</a></li><li class=search-icon><a href=javascript:void(0)><i class="fa fa-search"></i></a></li></ul></div></div></div></nav><script>var $body=document.body,$toggle=document.querySelector(".navbar-toggle"),$navbar=document.querySelector("#huxblog_navbar"),$collapse=document.querySelector(".navbar-collapse"),__HuxNav__={close:function(){$navbar.className=" ",setTimeout(function(){$navbar.className.indexOf("in")<0&&($collapse.style.height="0px")},400)},open:function(){$collapse.style.height="auto",$navbar.className+=" in"}};$toggle.addEventListener("click",function(){$navbar.className.indexOf("in")>0?__HuxNav__.close():__HuxNav__.open()}),document.addEventListener("click",function(e){if(e.target==$toggle)return;if(e.target.className=="icon-bar")return;__HuxNav__.close()})</script><div class=search-page><div class=search-icon-close-container><span class=search-icon-close><i class="fa fa-chevron-down"></i></span></div><div class="search-main container"><div class=row><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><form></form><input type=text id=search-input placeholder="$ grep..."></form><div id=search-results class=mini-post-list></div></div></div></div></div><style type=text/css>header.intro-header{position:relative;background-image:url('')}</style><header class="intro-header style-text"><div class=header-mask></div><div class=container><div class=row><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><div class=post-heading><div class=tags><a class=tag href=/tags/development/ title=development>development</a>
-<a class=tag href=/tags/git/ title=git>git</a>
-<a class=tag href=/tags/github/ title=github>github</a></div><h1>GitFlow Groundhog Day</h1><h2 class=subheading></h2><span class=meta>Posted by daemotron
-on Tue, May 2, 2017</span></div></div></div></div></header><article><div class=container><div class=row><div class="col-lg-8 col-lg-offset-2
-col-md-10 col-md-offset-1
-post-container"><p>Yes, this is all over again the old discussion about what&rsquo;s the best branching
-model for projects using <a href=https://git-scm.com/ target=_blank>Git</a> as their version control
+<!doctype html><html itemscope itemtype=https://schema.org/WebPage class=no-js lang=en><head prefix="og: http://ogp.me/ns#"><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=siteBaseUrl content="https://www.my-universe.com/"><meta name=author content="daemotron"><meta name=description content="Mens Insana in Corpore Ignavo"><meta name=keywords content="blog,developer,personal"><meta name=generator content="Hugo 0.142.0"><title>GitFlow Groundhog Day | My Universe
+</title><meta itemprop=name content="GitFlow Groundhog Day"><meta itemprop=description content="GitFlow Groundhog Day - Mens Insana in Corpore Ignavo"><meta property="og:site_name" content="My Universe"><meta property="og:url" content="https://www.my-universe.com/2017/05/02/gitflow-groundhog-day/"><meta property="og:site_name" content="My Universe"><meta property="og:title" content="GitFlow Groundhog Day"><meta property="og:description" content="Yes, this is all over again the old discussion about what’s the best branching model for projects using Git as their version control system. I know, there are countless blog posts (e. g. 1, 2, or 3) about that topic out there… yet, I feel most of the discussion is focused on projects with continuous deployment (i. e. mostly web applications), whereas classical desktop software with classical release cycles are rather underrepresented.
+First, some thoughts on what I actually need, before creating any new ideas others put already in the bin due to being unfit… When hacking on a desktop software or an operating system (i. e. something that will be deployed on many systems, by many people, without me as developer being aware), it all comes down to releases. People are used to releases, updates etc. being clearly labelled with a semantic version designator. This is no different from what you should do for SAAS web applications — what’s really different here is that for desktop applications, several supported versions can exist in parallel. So for me, a good branching model should"><meta property="og:locale" content="en_gb"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2017-05-02T00:00:00+00:00"><meta property="article:modified_time" content="2017-05-02T00:00:00+00:00"><meta property="article:tag" content="Development"><meta property="article:tag" content="Git"><meta property="article:tag" content="Github"><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/site.webmanifest><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><meta name=msapplication-TileColor content="#da532c"><meta name=theme-color content="#ffffff"><script src=/modernizr-simple.js></script><link rel=canonical href=https://www.my-universe.com/2017/05/02/gitflow-groundhog-day/><link rel=stylesheet href=https://www.my-universe.com/theme.css></head><body class=bilberry-hugo-theme><nav><div class=container><ul class=topnav><li><a href=https://www.my-universe.com/page/about/>About</a></li><li><a href=https://www.my-universe.com/page/legal/>Legal</a></li></ul></div></nav><header><div class=container><div class=logo><a href=/ class=logo><img src=/img/avataaars.png alt>
+<span class=overlay><i class="fa fa-home"></i></span></a></div><div class=titles><h3 class=title><a href=/>My Universe</a></h3><span class=subtitle>Mens Insana in Corpore Ignavo</span></div><div class=toggler><i class="fa fa-bars" aria-hidden=true></i></div></div></header><div class="main container"><div class="article-wrapper u-cf single"><a class=bubble href=https://www.my-universe.com/2017/05/02/gitflow-groundhog-day/><i class="fas fa-fw fa-pencil-alt"></i></a><article class="default article"><div class=content><h1 class=article-title><a href=https://www.my-universe.com/2017/05/02/gitflow-groundhog-day/>GitFlow Groundhog Day</a></h1><div class=meta><span class="date moment">2017-05-02</span></div><p>Yes, this is all over again the old discussion about what&rsquo;s the best branching
+model for projects using <a href=https://git-scm.com/>Git</a> as their version control
 system. I know, there are countless blog posts
-(e. g. <a href=http://nvie.com/posts/a-successful-git-branching-model/ target=_blank>1</a>,
-<a href=https://guides.github.com/introduction/flow/ target=_blank>2</a>, or
-<a href=https://barro.github.io/2016/02/a-succesful-git-branching-model-considered-harmful/ target=_blank>3</a>)
+(e. g. <a href=https://nvie.com/posts/a-successful-git-branching-model/>1</a>,
+<a href=https://guides.github.com/introduction/flow/>2</a>, or
+<a href=https://barro.github.io/2016/02/a-succesful-git-branching-model-considered-harmful/>3</a>)
 about that topic out there&mldr; yet, I feel most of the discussion is focused on
 projects with continuous deployment (i. e. mostly web applications), whereas
 classical desktop software with classical release cycles are rather
@@ -23,39 +15,39 @@ others put already in the bin due to being unfit&mldr; When hacking on a desktop
 software or an operating system (i. e. something that will be deployed on
 many systems, by many people, without me as developer being aware), it all
 comes down to releases. People are used to releases, updates etc. being clearly
-labelled with a <a href=http://semver.org/ target=_blank>semantic version</a> designator. This is no
+labelled with a <a href=https://semver.org/>semantic version</a> designator. This is no
 different from what you should do for SAAS web applications &mdash; what&rsquo;s really
 different here is that for desktop applications, several supported versions
 can exist in parallel. So for me, a good branching model should</p><ul><li>limit to one eternal branch (have most recent <em>working</em> code in <code>master</code>)</li><li>use feature branches to change the code in <code>master</code></li><li>support maintenance of several active releases in parallel</li></ul><p>So, why not have a look at what are other open source developers doing? Well,
 that proved to be easier said than done. I&rsquo;m quite familiar with
-<a href=https://www.freebsd.org/doc/en/books/dev-model/release-branches.html target=_blank>FreeBSD&rsquo;s branching model</a>,
+<a href=https://www.freebsd.org/doc/en/books/dev-model/release-branches.html>FreeBSD&rsquo;s branching model</a>,
 but it is rather old-school, was ported from CVS to Subversion and seems to have
-<a href=https://wiki.freebsd.org/GitDrawbacks target=_blank>some misfits with Git</a> (of course the
+<a href=https://wiki.freebsd.org/GitDrawbacks>some misfits with Git</a> (of course the
 linked article blames Git, but that means vice versa if Git is otherwise
 considered good or is mandatory to be used, the FreeBSD branching model doesn&rsquo;t
 fit well with Git).</p><p>But what about more recent projects, that were not ported from older version
-control systems? Well, there are some, like <a href=https://atom.io/ target=_blank>Atom</a> and
-<a href=https://electron.atom.io/ target=_blank>Electron</a>. Both would be perfect samples, as they
+control systems? Well, there are some, like <a href=https://atom.io/>Atom</a> and
+<a href=https://electron.atom.io/>Electron</a>. Both would be perfect samples, as they
 use semantic versions, have no continuous deployment and are managed by
 GitHub &mdash; they could be great role models about how Git in general and GitHub
 in particular are meant to be used for this type of project. I wrote &ldquo;would&rdquo; and
 &ldquo;could&rdquo; since both projects didn&rsquo;t document their branching model anywhere. Of
 course that didn&rsquo;t prevent me from reviewing both projects&rsquo; repository structure
 in order to explore what branches I would find there. For Electron, I couldn&rsquo;t
-really figure a structure, but for Atom, there seems to be one:</p><p><figure><a class=paragraph-image><img data-src=images/atom-git-branches.png data-action=zoom alt="Atom Git Branches" class=lazyload></a></figure></p><p>Seemingly, Atom uses dedicated branches for releases, and tags on these branches
+really figure a structure, but for Atom, there seems to be one:</p><p><img src=images/atom-git-branches.png alt="Atom Git Branches"></p><p>Seemingly, Atom uses dedicated branches for releases, and tags on these branches
 to mark published releases. This would be quite in line with what
-<a href=http://www.bitsnbites.eu/author/m/ target=_blank>Marcus Geelnard</a> proposes in his
-<a href=http://www.bitsnbites.eu/a-stable-mainline-branching-model-for-git/ target=_blank>stable mainline branching model for Git</a>.
+<a href=https://www.bitsnbites.eu/author/m/>Marcus Geelnard</a> proposes in his
+<a href=https://www.bitsnbites.eu/a-stable-mainline-branching-model-for-git/>stable mainline branching model for Git</a>.
 At a first glance, this seems to be the only acceptable model also satisfying
 my third requirement, i. e. the maintenance of several active releases in
 parallel, that are not nice sequences. This feels quite close from what I know
 from FreeBSD &mdash; <code>master</code> corresponds to <code>head</code>, and the release branches
 correspond to FreeBSD&rsquo;s <code>releng</code> branches.</p><p>However, there&rsquo;s another branching model that looks quite appealing to me:
-<a href=http://endoflineblog.com/about target=_blank>Adam Ruka</a>&rsquo;s
-<a href=http://endoflineblog.com/oneflow-a-git-branching-model-and-workflow target=_blank>OneFlow</a>
+<a href=https://endoflineblog.com/about>Adam Ruka</a>&rsquo;s
+<a href=https://endoflineblog.com/oneflow-a-git-branching-model-and-workflow>OneFlow</a>
 model (the post is quite recent, but the idea of that model already dates back
 to his first article on the subject,
-<a href=http://endoflineblog.com/gitflow-considered-harmful target=_blank>GitFlow considered harmful</a>).
+<a href=https://endoflineblog.com/gitflow-considered-harmful>GitFlow considered harmful</a>).
 True, in the preamble it already says:</p><blockquote><p>The main condition that needs to be satisfied in order to use OneFlow for a
 project is that every new production release is based on the previous release</p><p>[&mldr;]</p><p>If your project needs to maintain multiple simultaneous yet incompatible release
 versions that way, then OneFlow won&rsquo;t work for you out of the box.</p></blockquote><p>But is that really true for my projects? For FreeBSD and Python it certainly
@@ -80,8 +72,8 @@ in several files scattered across the project&rsquo;s source tree). It also woul
 you have to stick to a certain sequence:</p><ul><li>create the release branch</li><li>do your stuff on the release branch (bump version & tag release)</li><li>you can create new feature branches off <code>master</code> in the meantime</li><li>merge the release branch back into <code>master</code> before any new feature branch
 is allowed to be merged (i. e. apply a code freeze rule for <code>master</code>)</li><li>bump the version on <code>master</code> to the next RELENG working release</li><li>rebase all feature branches to the bumped <code>master</code></li><li>start merging back feature branches</li></ul><p>For me it would feel more natural to have a sequence like this one:</p><ul><li>create a release branch</li><li>bump version on <code>master</code> to the next development release</li><li>rebase any feature branch to the bumped <code>master</code></li><li>do whatever has to be done on the release branch (version bump, release
 candidates, &mldr;)</li><li>tag the final version on the release branch</li></ul><p>The ugly aspect of this
-<a href=https://barro.github.io/2016/02/a-succesful-git-branching-model-considered-harmful/ target=_blank>cactus model</a>
-(that&rsquo;s what <a href=https://barro.github.io/author/ target=_blank>Jussi Judin</a> calls it) is the
+<a href=https://barro.github.io/2016/02/a-succesful-git-branching-model-considered-harmful/>cactus model</a>
+(that&rsquo;s what <a href=https://barro.github.io/author/>Jussi Judin</a> calls it) is the
 merging effort between the different branches. It allows the <code>master</code> branch
 to strongly evolve while the release is being finished, which makes it hard to
 keep fixes in sync between potentially several release branches, <code>master</code> and
@@ -97,9 +89,9 @@ releases. For sure, a hotfix or patch release has to be based on the latest
 previous release, but that could as well be a hotfix release itself (e. g.
 2.3.2 would be based on 2.3.1). OneFlow is not really taking this into
 consideration, so for me, I&rsquo;m more or less back on
-[Marcus Geelnard](<a href=http://www.bitsnbites.eu/author/m/%27s target=_blank>http://www.bitsnbites.eu/author/m/'s</a>
-<a href=http://www.bitsnbites.eu/a-stable-mainline-branching-model-for-git/ target=_blank>stable mainline branching model for Git</a>,
-but with one amendment taken from OneFlow:</p><p><figure><a class=paragraph-image><img data-src=images/advanced-git-branching-model.png data-action=zoom alt="My Git Branching Model" class=lazyload></a></figure></p><p>So my personal branching model is a mix of the OneFlow and Cactus models:</p><ul><li>New features are developed in feature branches, leaving <code>master</code> as single
+<a href=https://www.bitsnbites.eu/author/m/>Marcus Geelnard</a>&rsquo;s
+<a href=https://www.bitsnbites.eu/a-stable-mainline-branching-model-for-git/>stable mainline branching model for Git</a>,
+but with one amendment taken from OneFlow:</p><p><img src=images/advanced-git-branching-model.png alt="My Git Branching Model"></p><p>So my personal branching model is a mix of the OneFlow and Cactus models:</p><ul><li>New features are developed in feature branches, leaving <code>master</code> as single
 eternal branch (in accordance with OneFlow).</li><li><code>master</code> is a protected branch, so features have to be merged by pull requests
 with all applicable code checks (CI, quality reviews) to be passed prior
 merge (my own rule enhancement).</li><li>Alpha and beta pre-releases are managed via tags in <code>master</code>. Version bumps
@@ -121,27 +113,13 @@ maintenance branch, managed as protected branch (to avoid incidental
 development in the wrong place &mdash; this is my own enhancement to OneFlow).</li><li>Post release patches (i. e. hot fixes) are managed within the residual release
 branch (which becomes a maintenance branch after the final release).</li></ul><p>With this set of rules, it should be fairly straight forward to manage projects
 with sequential releases, but a need for hotfix releases also for older releases
-otherwise not being developed any further.</p><hr style=visibility:hidden><ul class=pager><li class=previous><a href=/2017/04/30/reboot/ data-toggle=tooltip data-placement=top title=Reboot>Previous<br><span>Reboot</span></a></li><li class=next><a href=/2017/05/28/pythonic-distance-conversion/ data-toggle=tooltip data-placement=top title="Pythonic Distance Conversion">Next<br><span>Pythonic Distance Conversion</span></a></li></ul><hr style=visibility:hidden></div><div class="col-lg-8 col-lg-offset-2
-col-md-10 col-md-offset-1
-sidebar-container"><section><hr class="hidden-sm hidden-xs"><h5>FEATURED TAGS</h5><div class=tags><a href=/tags/blog/>blog</a>
-<a href=/tags/c/c++/>c/c++</a>
-<a href=/tags/cmake/>cmake</a>
-<a href=/tags/development/>development</a>
-<a href=/tags/django/>django</a>
-<a href=/tags/git/>git</a>
-<a href=/tags/github/>github</a>
-<a href=/tags/go/>go</a>
-<a href=/tags/hubpress/>hubpress</a>
-<a href=/tags/hugo/>hugo</a>
-<a href=/tags/python/>python</a>
-<a href=/tags/x-plane/>x-plane</a></div></section></div></div></div></article><footer><div class=container><div class=row><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><ul class="list-inline text-center"><li><a href=https://github.com/daemotron target=_blank><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i>
-<i class="fab fa-github fa-stack-1x fa-inverse"></i></span></a></li><li><a href=https://linkedin.com/in/jescofreund target=_blank><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i>
-<i class="fab fa-linkedin fa-stack-1x fa-inverse"></i></span></a></li><li><a href=https://gitlab.com/daemotron target=_blank><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i>
-<i class="fab fa-gitlab fa-stack-1x fa-inverse"></i></span></a></li><li><a href=https://stackoverflow.com/users/5217009/daemotron target=_blank><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i>
-<i class="fab fa-stack-overflow fa-stack-1x fa-inverse"></i></span></a></li><li><a href=/index.xml target=_blank><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i>
-<i class="fas fa-rss fa-stack-1x fa-inverse"></i></span></a></li></ul><p class="copyright text-muted">Copyright &copy; My Universe 2024<br>Powered by <a href=https://gohugo.io>Hugo</a></p></div></div></div></footer><script src=/js/jquery.min.js></script>
-<script src=/js/bootstrap.min.js crossorigin=anonymous></script>
-<script src=/js/hux-blog.min.c4ea77041cd3edbfc8b2622cd887a9a5d8760a4162d14489e36d2a3fa4c90172.js></script>
-<script src=/js/simple-jekyll-search.min.js></script>
-<script src=/js/search.min.53bce5da475b4d362500e5ce5dddfa22e20e1b9018777411d2020b4b839c9310.js></script>
-<script src=/zoomjs/zoom.min.js></script></body></html>
+otherwise not being developed any further.</p></div><div class=footer><div class=tags><i class="fa fa-tags"></i><div class=links><a href=https://www.my-universe.com/tags/development/>Development</a>
+<a href=https://www.my-universe.com/tags/git/>Git</a>
+<a href=https://www.my-universe.com/tags/github/>Github</a></div></div></div></article></div><div id=comments-container></div></div><footer><div class=container><div class=recent-posts><strong>Latest posts</strong><ul><li><a href=https://www.my-universe.com/2024/04/06/configuration-to-go/>Configuration to Go</a></li><li><a href=https://www.my-universe.com/2023/10/31/elegant-python-exceptions/>Elegant Python Exceptions</a></li><li><a href=https://www.my-universe.com/2023/09/27/dataref-caching-revisited/>Dataref Caching Revisited</a></li><li><a href=https://www.my-universe.com/2023/09/23/configuration-file-with-xppl/>Configuration File with XPPL</a></li><li><a href=https://www.my-universe.com/2023/09/22/introducing-xppl/>Introducing XPPL</a></li><li><a href=https://www.my-universe.com/2023/04/20/cache-your-datarefs/>Cache Your Datarefs</a></li><li><a href=https://www.my-universe.com/2023/01/14/talk-to-the-log/>Talk to the Log</a></li></ul></div><div class=categories><a href=https://www.my-universe.com/categories/><strong>Categories</strong></a><ul><li><a href=https://www.my-universe.com/categories/x-plane/>X-Plane (3)</a></li><li><a href=https://www.my-universe.com/categories/website/>Website (2)</a></li><li><a href=https://www.my-universe.com/categories/go/>Go (1)</a></li><li><a href=https://www.my-universe.com/categories/python/>Python (1)</a></li></ul></div><div class=right><div class=external-profiles><strong>Social media</strong>
+<a href=https://github.com/daemotron target=_blank rel><em class="fab fa-github"></em></a>
+<a href=https://gitlab.com/daemotron target=_blank rel><em class="fab fa-gitlab"></em></a>
+<a href=https://stackoverflow.com/users/5217009/daemotron target=_blank rel=me><em class="fab fa-stack-overflow"></em></a>
+<a href=https://www.linkedin.com/in/jescofreund target=_blank rel><em class="fab fa-linkedin"></em></a>
+<a href=/index.xml target=_blank rel><em class="fas fa-rss"></em></a></div><div class=archive><a href=https://www.my-universe.com/archive/><strong>Archive</strong></a></div></div></div></footer><div class=credits><div class=container><div class=copyright><a href=https://www.my-universe.com/ target=_blank>&copy;
+2017 - 2025
+My Universe</a></div><div class=author><a href=https://gohugo.io/ target=_blank>Powered by Hugo & Bilberry Hugo Theme</a></div></div></div><script src=https://www.my-universe.com/theme.js></script></body></html>
