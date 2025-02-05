@@ -70,9 +70,9 @@ disqusShortname = ""
 
   # Enable / Disable algolia search
   algolia_search    = false
-  algolia_appId     = "45CEN6X6AT"
-  algolia_apiKey    = "16030625f1a4d0dd3b8aefd794fd4cf1"
-  algolia_indexName = "bilberry-hugo-theme"
+  algolia_appId     = "OWMLA6LB4S"
+  algolia_apiKey    = "83dfd646c2c7d94662d0edb6f9d319e9"
+  algolia_indexName = "index"
   # Set this option to false if you want to search within all articles in all languages at once
   algolia_currentLanguageOnly = true
 
@@ -157,6 +157,11 @@ unsafe = true
 category = "categories"
 tag = "tags"
 series = "series"
+author = "author"
+
+[outputs]
+home = [ "HTML", "JSON", "RSS" ]
+page = [ "HTML" ]
 
 [menu]
 [[menu.main]]
