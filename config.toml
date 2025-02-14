@@ -140,6 +140,12 @@ rss = true
 
 [permalinks]
 posts = '/:year/:month/:day/:title/'
+gallery = '/:year/:month/:day/:title/'
+article = '/:year/:month/:day/:title/'
+code = '/:year/:month/:day/:title/'
+quote = '/:year/:month/:day/:title/'
+status = '/:year/:month/:day/:title/'
+video = '/:year/:month/:day/:title/'
 
 [markup]
 [markup.highlight]
