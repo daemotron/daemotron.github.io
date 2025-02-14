@@ -140,6 +140,7 @@ rss = true
 
 [permalinks]
 posts = '/:year/:month/:day/:title/'
+gallery = '/:year/:month/:day/:title/'
 
 [markup]
 [markup.highlight]
